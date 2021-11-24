@@ -1,17 +1,15 @@
 import requests
+import json
+import time
 
+ 	
 TOKEN = "dynv6 token/username"
 DOMAINS = ["example.com", "example2.com"]
 
 current_pip = ""
 
 def get_ip():
-    ip_api = "https://ipinfo.io/json"
-    response = requests.get(ip_api, verify=True)
-
-    data = response.json()
-
-    return data["ip"]
+    return requests.get('https://api.ipify.org').text
 
 def update(new_ip):
     for domain in DOMAINS:
@@ -25,3 +23,4 @@ while True:
         display_new_ip = update(new_pip)
         current_pip = get_ip()
         print(display_new_ip)
+    time.sleep(10)
