@@ -13,7 +13,7 @@ def update(new_ip):
     for domain in DOMAINS:
         link = f"http://dynv6.com/api/update?hostname={domain}&token={TOKEN}&ipv4={new_ip}"
         requests.get(link)
-        return f"changed ip to {new_ip}"
+    return f"changed ip to {new_ip}"
 
 while True:
     new_pip = get_ip()
