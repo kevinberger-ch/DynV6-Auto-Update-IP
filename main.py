@@ -1,5 +1,4 @@
 import requests
-import json
 import time
 
 TOKEN = "dynv6 token/username"
